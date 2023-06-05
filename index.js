@@ -15,14 +15,10 @@ function play(index){
     function changeText(index){
         if(values[index].innerHTML===""){
             values[index].innerHTML="X"
-
-        } else if(values[index].innerHTML==="X"){
-            alert("please select an empty box!")
-        }else   
-            return
-
+            values[index].onclick = null;
+      
+         }
     }
-
 
 
     function createO() {
@@ -37,6 +33,7 @@ function play(index){
             setTimeout(() => {
                 randomIndex=emptyItems[Math.floor(Math.random()*emptyItems.length)]
                 values[randomIndex].innerHTML="O";
+                values[randomIndex].onclick = null;
             }, 1000)
 
 
