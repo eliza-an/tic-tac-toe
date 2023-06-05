@@ -34,6 +34,14 @@ function play(index){
                 randomIndex=emptyItems[Math.floor(Math.random()*emptyItems.length)]
                 values[randomIndex].innerHTML="O";
                 values[randomIndex].onclick = null;
+                if ((item0.innerHTML==="O" && item1.innerHTML==="O" && item2.innerHTML==="O") || (item3.innerHTML==="O" && item4.innerHTML==="O" && item5.innerHTML==="O") || (item6.innerHTML==="O" && item7.innerHTML==="O" && item8.innerHTML==="O") || (item0.innerHTML==="O" && item3.innerHTML==="O" && item6.innerHTML==="O") || (item1.innerHTML==="O" && item4.innerHTML==="O" && item7.innerHTML==="O") || (item2.innerHTML==="O" && item5.innerHTML==="O" && item8.innerHTML==="O") || (item0.innerHTML==="O" && item4.innerHTML==="O" && item8.innerHTML==="O") || (item2.innerHTML==="O" && item4.innerHTML==="O" && item6.innerHTML==="O") ){
+                    setTimeout(()=>{ alert("You Lose!") ;
+                        if(confirm("Would you like to play again?")){
+                            window.location.reload(true)
+                        }
+                    },500)
+                 }      
+                
             }, 1000)
 
 
@@ -50,14 +58,14 @@ function play(index){
                 }
              },500) 
       
-       
-        } else if ((item0.innerHTML==="O" && item1.innerHTML==="O" && item2.innerHTML==="O") || (item3.innerHTML==="O" && item4.innerHTML==="O" && item5.innerHTML==="O") || (item6.innerHTML==="O" && item7.innerHTML==="O" && item8.innerHTML==="O") || (item0.innerHTML==="O" && item3.innerHTML==="O" && item6.innerHTML==="O") || (item1.innerHTML==="O" && item4.innerHTML==="O" && item7.innerHTML==="O") || (item2.innerHTML==="O" && item5.innerHTML==="O" && item8.innerHTML==="O") || (item0.innerHTML==="O" && item4.innerHTML==="O" && item8.innerHTML==="O") || (item2.innerHTML==="O" && item4.innerHTML==="O" && item6.innerHTML==="O") ){
-            setTimeout(()=>{ alert("You Lose!") ;
+         
+
+        }else if (document.querySelectorAll(".grid-item:not(:empty)").length === 9) {
+            alert("You Draw!");
+                        setTimeout(()=>{ alert("You Win!") ;
                 if(confirm("Would you like to play again?")){
                     window.location.reload(true)
                 }
-            },500) 
-        }else if (document.querySelectorAll(".grid-item:not(:empty)").length === 9) {
-            alert("You Draw!");
+             },500)
         }
 }
