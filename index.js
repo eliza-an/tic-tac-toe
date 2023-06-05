@@ -17,7 +17,7 @@ function play(index){
             values[index].innerHTML="X"
 
         } else if(values[index].innerHTML==="X"){
-            return
+            alert("please select an empty box!")
         }else   
             return
 
@@ -60,5 +60,7 @@ function play(index){
                     window.location.reload(true)
                 }
             },500) 
+        }else if (document.querySelectorAll(".grid-item:not(:empty)").length === 9) {
+            alert("You Draw!");
         }
 }
